@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff7f5;
+        color: #333;
+        text-align: center;
+    }
+
+    .section {
+        padding: 40px 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h1 {
+        color: #d96c6c;
+    }
+
+    button {
+        background-color: #ff8fa3;
+        border: none;
+        padding: 12px 25px;
+        color: white;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ff6f91;
+    }
+
+    .gallery img {
+        width: 80%;
+        max-width: 300px;
+        border-radius: 15px;
+        margin: 15px 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    audio {
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 1. BIENVENIDA -->
+<div class="section show">
+    <h1>💛 Hola amor</h1>
+    <p>Si estás viendo esto… es porque necesitabas un recordatorio</p>
+    <button onclick="mostrarSeccion('mensaje')">Abrir</button>
+</div>
+
+<!-- 2. MENSAJE PRINCIPAL -->
+<div id="mensaje" class="section hidden">
+    <h1>Para ti ❤️</h1>
+    <p>
+        A veces me cuesta poner en palabras todo lo que siento por ti, porque eres lo que para mi va mas alla de cualquier frase<br><br>
+        pero sí sé algo:<br><br>
+       Si algun dia dudas de cuanto te amo, recuerda esto: <br>
+      Te elegiria una y mil veces mas, en cualquier vida,
+      en cualquier momento, en cualquier version de nosotros.
+      Porque eres tú... siempre has sido tú.
+    </p>
+
+    
+    </p>
+
+    <button onclick="mostrarSeccion('galeria')">Ver nuestros momentos 📸</button>
+</div>
+
+<!-- 3. GALERÍA -->
+<div id="galeria" class="section hidden gallery">
+    <h1>Nuestros recuerdos 💕</h1>
+
+    <img src="foto1.jpg">
+    <p>Este día fui muy feliz contigo</p>
+
+    <img src="foto2.jpg">
+    <p>Aquí entendí lo mucho que te quiero</p>
+
+    <img src="foto3.jpg">
+    <p>Este momento siempre lo voy a guardar</p>
+
+    <button onclick="mostrarSeccion('sorpresa')">Algo más para ti ✨</button>
+</div>
+
+<!-- 4. SORPRESA -->
+<div id="sorpresa" class="section hidden">
+    <h1>Para cuando no estés bien 💔</h1>
+
+    <p id="mensajeOculto" class="hidden">
+        Si algun dia te sientes triste, quiero que recuerdes
+      algo muy importante:
+      No estas sola.
+      Aqui estoy yo, para abrazarte incluso cuando no
+      este fisicamente, para escucharte, para cuidarte y 
+      para recordarte lo increible que eres.
+      Todo pasa... y yo voy a estar contigo en cada momento.<br><br>
+        Todo va a estar bien, y yo estoy contigo siempre ❤️
+    </p>
+
+    <button onclick="mostrarMensaje()">Presiona aquí</button>
+
+    
+
+    <button onclick="mostrarSeccion('final')">Final 💛</button>
+</div>
+
+<!-- 5. CIERRE -->
+<div id="final" class="section hidden">
+    <h1>Siempre contigo 💛</h1>
+    <p>
+        
+      Si llegaste hasta aquí, solo quiero que te quedes 
+      con esto:<br>
+      Te amo.<br>
+      Te amo hoy, mañana y en cada momento que venga.<br>
+      Y no importa lo que pase, siempre voy a estar para ti.<br>
+      Cuando dudes de algo... vuelve aquí.<br>
+      Siempre vas a encontrarme contigo. 
+    </p>
+
+    <h3>Con amor, [Rafa] ❤️</h3>
+  <img src="foto3.jpg">
+    
+</div>
+
+<script>
+function mostrarSeccion(id) {
+    let secciones = document.querySelectorAll('.section');
+    secciones.forEach(sec => sec.classList.add('hidden'));
+
+    let nueva = document.getElementById(id);
+    nueva.classList.remove('hidden');
+
+    setTimeout(() => {
+        nueva.classList.add('show');
+    }, 100);
+}
+
+function mostrarMensaje() {
+    document.getElementById('mensajeOculto').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
